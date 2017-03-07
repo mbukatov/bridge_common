@@ -38,11 +38,9 @@ class CommonNS(object):
 
         self.tendrl_context = ns_obj.objects.TendrlContext()
 
-
         log.setup_logging(
             self.config.data['log_cfg_path'],
         )
-
 
     def get_ns(self):
         # eg: input : "tendrl.node_agent", return: "node_agent"

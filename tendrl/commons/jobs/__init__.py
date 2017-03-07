@@ -36,7 +36,6 @@ class JobConsumer(object):
                     tendrl_ns.tendrl_context.integration_id, raw_job['run'],
                     req_id)
 
-
             # TODO(team) Convert this raw write to done via
             # persister.update_job()
             Job(**raw_job).save()
