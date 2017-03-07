@@ -97,7 +97,8 @@ class CommonNS(object):
         def _discover_subclasses(cls, _seen=None):
             if not isinstance(cls, type):
                 raise TypeError('New-style class required' % cls)
-            if _seen is None: _seen = set()
+            if _seen is None:
+                _seen = set()
             try:
                 subs = cls.__subclasses__()
             except TypeError:  # fails only when cls is type
