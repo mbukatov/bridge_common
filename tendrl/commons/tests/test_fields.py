@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from tendrl.commons.tests.test_commons import TestBridge_commons
+from test_commons import TestBridge_commons
 
 
 class TestField(TestBridge_commons):
