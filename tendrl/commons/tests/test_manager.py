@@ -5,7 +5,6 @@ from mock import MagicMock
 
 sys.modules['tendrl.commons.config'] = MagicMock()
 from tendrl.commons.manager import manager
-from tendrl.commons.manager.rpc_job_process import RpcJobProcessThread
 
 
 class MyManager(manager.Manager):
