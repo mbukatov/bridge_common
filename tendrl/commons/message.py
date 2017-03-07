@@ -5,16 +5,17 @@ from inspect import stack
 import json
 import sys
 from tendrl.commons.utils.time_utils import now
+
+# TODO(anmol, collectd) This is a workaround required due to
+# https://github.com/collectd/collectd/issues/2179
+# An appropriate solution needs to be carved out
 is_collectd_imported = False
 if '/usr/lib64/collectd' in sys.path:
     is_collectd_imported = True
     sys.path.remove('/usr/lib64/collectd')
-import uuid
+import uuid  # noqa: E402
 if is_collectd_imported:
     sys.path.append('/usr/lib64/collectd')
-# TODO(anmol, collectd) This is required due to
-# https://github.com/collectd/collectd/issues/2179
-# An appropriate solution needs to be carved out
 
 
 class Message(object):
