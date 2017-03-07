@@ -127,6 +127,7 @@ class JobConsumer(object):
             return flow(parameters=job['parameters'],
                         request_id=job['request_id']).run()
 
+
 class JobConsumerThread(gevent.greenlet.Greenlet):
     # In case server.run throws an exception, prevent
     # really aggressive spinning
