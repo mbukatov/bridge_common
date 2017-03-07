@@ -1,9 +1,10 @@
+from tendrl.commons.event import Event
+from tendrl.commons.message import Message
 from tendrl.commons.utils.ansible_module_runner import \
     AnsibleExecutableGenerationFailed
 from tendrl.commons.utils.ansible_module_runner import \
     AnsibleRunner
-from tendrl.commons.event import Event
-from tendrl.commons.message import Message
+
 
 ANSIBLE_MODULE_PATH = "core/system/user.py"
 

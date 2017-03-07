@@ -2,11 +2,11 @@ __version__ = '1.2.1'
 
 import namespaces as ns
 
-from tendrl.commons import objects
-from tendrl.commons import flows
-from tendrl.commons.objects import atoms
 from tendrl.commons import etcdobj
+from tendrl.commons import flows
 from tendrl.commons import log
+from tendrl.commons import objects
+from tendrl.commons.objects import atoms
 
 
 class CommonNS(object):
