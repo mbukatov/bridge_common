@@ -66,7 +66,7 @@ def find_status():
 
 
 def _find_pid(out):
-    pid = 0 # 0 when sshd not run
+    pid = 0  # 0 when sshd not run
     out = out.split("\n")
     for item in out:
         item = item.split("=")
