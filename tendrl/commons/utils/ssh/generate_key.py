@@ -67,7 +67,8 @@ class GenerateKey(object):
                 Message(
                     priority="warning",
                     publisher="commons",
-                    payload={"message":"Unable to generate ssh-key .err: %s" % err}
+                    payload={"message":
+                             "Unable to generate ssh-key .err: %s" % err}
                 )
             )
         elif "ssh_public_key" in out:

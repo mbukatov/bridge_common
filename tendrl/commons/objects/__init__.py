@@ -45,8 +45,8 @@ class BaseObject(object):
         try:
             current_obj = self.load()
             for attr, val in self.__dict__.iteritems():
-                if attr in ["attrs", "enabled", "obj_list", "obj_value", "atoms",
-                            "flows", "value", "list"]:
+                if attr in ["attrs", "enabled", "obj_list", "obj_value",
+                            "atoms", "flows", "value", "list"]:
                     continue
                 if val is None:
                     continue

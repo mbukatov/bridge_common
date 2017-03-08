@@ -57,7 +57,8 @@ class AuthorizeKey(object):
                     publisher="commons",
                     payload={"message": "Copying authorize key failed %s. "
                              "Error: %s" % (
-                                 self.attributes["_raw_params"], str(e.message))}
+                                 self.attributes["_raw_params"],
+                                 str(e.message))}
                 )
             )
         if err is not "":
@@ -65,7 +66,8 @@ class AuthorizeKey(object):
                 Message(
                     priority="warning",
                     publisher="commons",
-                    payload={"message": "Unable to copy authorize key .err:%s" % err}
+                    payload={"message":
+                             "Unable to copy authorize key .err:%s" % err}
                 )
             )
             return False, err
