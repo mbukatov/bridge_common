@@ -19,7 +19,7 @@ class Installer(object):
         elif package_type == "deb":
             self.ansible_module_path = "core/packaging/os/apt.py"
         else:
-            LOG.error("Unsupported package type: %s" % package_type)
+            LOG.error("Unsupported package type: %s", package_type)
             raise ValueError("Unsupported package type: %s" % package_type)
 
         if package_version:
@@ -33,10 +33,11 @@ class Installer(object):
                 **self.attributes
             )
             result, err = runner.run()
-            LOG.debug("INSTALLATION: %s" % result)
+            LOG.debug("INSTALLATION: %s", result)
         except AnsibleExecutableGenerationFailed as e:
-            LOG.error("Could not install package: %s."
-                      " Error: %s" % (self.attributes["name"], str(e)))
+            LOG.error("Could not install package: %s. Error: %s",
+                      self.attributes["name"],
+                      str(e))
             return e.message, False
         message = result.get("msg", "").encode("ascii")
         if result.get("rc", -1) == 0:

@@ -32,7 +32,7 @@ class AnsibleRunner(object):
         self.executable_module_path = exec_path + str(uuid.uuid4())
         self.module_path = modules.__path__[0] + "/" + module_path
         if not os.path.isfile(self.module_path):
-            LOG.error("Module path: %s does not exist" % self.module_path)
+            LOG.error("Module path: %s does not exist", self.module_path)
             raise ValueError
         if kwargs == {}:
             LOG.error("Empty argument dictionary")
@@ -52,8 +52,10 @@ class AnsibleRunner(object):
                     task_vars={}
                 )
         except Exception as e:
-            LOG.error("Could not generate executable data for module"
-                      ": %s. Error: %s" % (self.module_path, str(e)))
+            LOG.error(("Could not generate executable data for module"
+                      ": %s. Error: %s"),
+                      self.module_path,
+                      str(e))
             raise AnsibleExecutableGenerationFailed(
                 self.module_path,
                 self.executable_module_path,
