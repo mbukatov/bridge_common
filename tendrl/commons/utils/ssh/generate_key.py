@@ -17,7 +17,7 @@ class GenerateKey(object):
 
     At the time of initialize it takes user and
     group as parameters.
-    
+
     input:
         user (default is root)
         group (optional)
