@@ -30,7 +30,7 @@ class AuthorizeKey(object):
         self.attributes["key"] = ssh_key
 
     def run(self):
-        """This function is used to copy the given authorize ssh-key 
+        """This function is used to copy the given authorize ssh-key
 
         output:
             True/False, error

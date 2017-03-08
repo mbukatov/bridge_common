@@ -45,7 +45,7 @@ def find_status():
                     )
                 )
         else:
-            err = "sshd service is not running" 
+            err = "sshd service is not running"
             Event(
                 Message(
                     priority="warning",
