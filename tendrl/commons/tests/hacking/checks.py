@@ -296,8 +296,8 @@ def check_no_direct_tendrl_objects_import(logical_line, physical_line,
     if filename == "./tendrl/commons/objects/endpoint.py":
         return
 
-    if (logical_line.startswith("from tendrl.commons.objects")
-            or logical_line.startswith("import tendrl.commons.objects.")):
+    if (logical_line.startswith("from tendrl.commons.objects") or
+            logical_line.startswith("import tendrl.commons.objects.")):
         yield (0, "N340: Import objects module:"
                   "`from tendrl.commons import objects`. "
                   "After that you can use directly objects e.g. objects.Task")
@@ -312,8 +312,8 @@ def check_no_oslo_deprecated_import(logical_line, physical_line, filename):
 
     N341
     """
-    if (logical_line.startswith("from oslo.")
-            or logical_line.startswith("import oslo.")):
+    if (logical_line.startswith("from oslo.") or
+            logical_line.startswith("import oslo.")):
         yield (0, "N341: Import oslo module: `from oslo_xyz import ...`. "
                   "The oslo.xyz namespace was deprecated, use oslo_xyz "
                   "instead")
