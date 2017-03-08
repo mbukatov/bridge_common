@@ -29,8 +29,10 @@ def find_status():
         pid = _find_pid(out)
         if pid != 0:
             p = psutil.Process(pid)
-            result = [con for con in p.connections() if con.status ==
-                  psutil.CONN_LISTEN and con.laddr[0] == "0.0.0.0"]
+            result = [
+                con for con in p.connections()
+                if con.status == psutil.CONN_LISTEN and
+                con.laddr[0] == "0.0.0.0"]
             if result != []:
                 sshd["name"] = p.name()
                 sshd["port"] = int(result[0].laddr[1])
